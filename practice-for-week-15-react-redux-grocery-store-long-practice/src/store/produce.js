@@ -9,11 +9,13 @@ export const populateProduce = produceData => {
 }
 
 export default function produceReducer(state = {}, action) {
-    const nextState = Object.assign({}, Object.freeze(state));
-
     switch (action.type) {
         case POPULATE:
-            nextState[action.p]
+            const newState = {};
+            action.produce.forEach(produce => {
+                newState[produce.id] = produce;
+            });
+            return newState;
         default:
             return state;
     }

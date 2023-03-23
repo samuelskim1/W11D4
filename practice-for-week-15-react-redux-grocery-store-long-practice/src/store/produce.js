@@ -1,7 +1,7 @@
-import produceData from "../mockData/produce.json"
+import produceData from '../mockData/produce.json'
 const POPULATE = 'produce/POPULATE'
 
-export const populateProduce = produceData => {
+export const populateProduce = () => {
     return {
         type: POPULATE,
         produce: produceData
